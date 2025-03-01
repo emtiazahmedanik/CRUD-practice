@@ -15,7 +15,7 @@ successToast(){
 }
 errorToast(){
   return Fluttertoast.showToast(
-      msg: "Request Success",
+      msg: "Request Fail",
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,

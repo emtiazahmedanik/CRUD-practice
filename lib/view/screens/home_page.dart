@@ -1,4 +1,5 @@
 import 'package:crud_practice/service/services.dart';
+import 'package:crud_practice/view/screens/create_product_page.dart';
 import 'package:crud_practice/view/screens/style/style.dart';
 import 'package:crud_practice/viewmodel/get_products.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +88,9 @@ class _HomePageState extends State<HomePage> {
                                         mainAxisAlignment: MainAxisAlignment.end,
                                         children: [
                                           IconButton(
-                                            onPressed: (){},
+                                            onPressed: (){
+                                              Navigator.push(context, MaterialPageRoute(builder: (context)=>CreateProductPage(index: index,)));
+                                            },
                                             icon: Icon(Icons.edit,size: 14,),
                                           ),
                                           IconButton(

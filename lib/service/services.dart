@@ -52,3 +52,17 @@ Future<void> deleteProduct(id) async{
     errorToast();
   }
 }
+
+Future<void> updateProduct(id,formValues) async{
+  Uri updateProductURI = Uri.parse("$baseUrl/UpdateProduct/$id");
+  final postBody = jsonEncode(formValues);
+  final postHeader = {"Content-Type":"application/json"};
+  final response = await http.post(updateProductURI,headers: postHeader,body: postBody);
+  final responseCode = response.statusCode;
+  final responseBody = jsonDecode(response.body);
+  if(responseCode==200 && responseBody["status"]=="success"){
+    successToast();
+  }else{
+    errorToast();
+  }
+}
