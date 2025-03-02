@@ -1,5 +1,4 @@
-import 'package:crud_practice/view/screens/home_page.dart';
-import 'package:crud_practice/view/widgets/bottomNavigationBar.dart';
+import 'package:crud_practice/presentation/view/widgets/bottomNavigationBar.dart';
 import 'package:flutter/material.dart';
 
 void main() {

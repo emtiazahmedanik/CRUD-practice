@@ -1,10 +1,12 @@
-import 'package:crud_practice/service/services.dart';
-import 'package:crud_practice/view/screens/create_product_page.dart';
-import 'package:crud_practice/view/screens/style/style.dart';
-import 'package:crud_practice/viewmodel/get_products.dart';
+
 import 'package:flutter/material.dart';
 
-import '../widgets/bottomNavigationBar.dart';
+import '../../../application/viewmodel/get_products.dart';
+import '../../../data/service/services.dart';
+import '../style/style.dart';
+import 'edit_product_page.dart';
+
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,6 +46,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
         child: RefreshIndicator(
           onRefresh: _refresh,
@@ -82,14 +85,14 @@ class _HomePageState extends State<HomePage> {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.stretch,
                                     children: [
-                                      Text(ProductName),
+                                      Text(ProductName,maxLines: 2,overflow: TextOverflow.ellipsis,),
                                       Text("$UnitPrice"),
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.end,
                                         children: [
                                           IconButton(
                                             onPressed: (){
-                                              Navigator.push(context, MaterialPageRoute(builder: (context)=>CreateProductPage(index: index,)));
+                                              Navigator.push(context, MaterialPageRoute(builder: (context)=>EditProductPage(index: index,)));
                                             },
                                             icon: Icon(Icons.edit,size: 14,),
                                           ),

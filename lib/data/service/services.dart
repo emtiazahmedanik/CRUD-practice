@@ -1,7 +1,8 @@
 import 'dart:convert';
-import 'package:crud_practice/utils/toast.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+
+import '../../presentation/utils/toast.dart';
 
 const baseUrl = 'http://35.73.30.144:2008/api/v1';
 Uri getRequestUri = Uri.parse("$baseUrl/ReadProduct");
@@ -17,11 +18,12 @@ List<dynamic> parseJson(String jsonData) {
 Future<List> getProductList() async {
   final response = await http.get(getRequestUri);
   final responseCode = response.statusCode;
-
+  // print(responseCode);
   if (responseCode == 200) {
     final responseBody = response.body; // Keep it as a String
     final result = await compute(parseJson, responseBody); // ✅ Now passing a String
     return result;
+
   } else {
     return [];
   }

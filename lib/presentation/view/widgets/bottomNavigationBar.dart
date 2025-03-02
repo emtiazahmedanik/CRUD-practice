@@ -1,8 +1,10 @@
-import 'package:crud_practice/viewmodel/get_products.dart';
+
 import 'package:flutter/material.dart';
-import 'package:crud_practice/view/screens/home_page.dart';
-import 'package:crud_practice/view/screens/create_product_page.dart';
-import 'package:crud_practice/view/screens/style/style.dart';
+
+import '../screens/create_product_page.dart';
+import '../screens/home_page.dart';
+import '../style/style.dart';
+
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});

@@ -1,6 +1,9 @@
 
-import 'package:crud_practice/view/screens/style/style.dart';
+
 import 'package:fluttertoast/fluttertoast.dart';
+
+import '../view/style/style.dart';
+
 
 successToast(){
   return Fluttertoast.showToast(
